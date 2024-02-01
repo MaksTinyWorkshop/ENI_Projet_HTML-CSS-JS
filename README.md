@@ -14,12 +14,12 @@ Si vous avez réussi à réaliser l’intégralité de ce qui est demandé, rien
 
 ## Rappel des objectifs :
 
-• Réaliser un premier projet.
-• Mettre en œuvre vos connaissances en HTML CSS et JavaScript basique avec manipulation du DOM et vérification de formulaire.
-• Commencer à apprendre Git de façon basique en local.
-◦ Savoir les commandes basiques de git (init, add, commit).
-◦ Savoir paramétrer un fichier .gitignore.
-◦ Savoir créer un compte sur Github et faire un premier push.
+- Réaliser un premier projet.
+- Mettre en œuvre vos connaissances en HTML CSS et JavaScript basique avec manipulation du DOM et vérification de formulaire.
+- Commencer à apprendre Git de façon basique en local.
+- Savoir les commandes basiques de git (init, add, commit).
+- Savoir paramétrer un fichier .gitignore.
+- Savoir créer un compte sur Github et faire un premier push.
 
 ## Méthode :
 
