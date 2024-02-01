@@ -26,3 +26,5 @@ Si vous avez réussi à réaliser l’intégralité de ce qui est demandé, rien
 Pour réaliser ce projet en suivant les itérations définies dans le document [[./Consignes/description-projet.pdf]] joint, j'ai d'abord structuré toute la carcasse du site "en dur", en procédant au codage de tout le HTML. Puis j'ai rélisé tout le JavaScript et enfin le CSS par le biais du préprocesseur SASS.
 
 #### HTML :
+
+... A suivre
