@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "node-sass-json-importer": "^4.3.0"
+  },
+  "scripts": {
+    "convert-sass": "node scriptVariables.js"
+  }
+}

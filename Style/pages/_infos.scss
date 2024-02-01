@@ -1,0 +1,93 @@
+@use "../utils/variables" as *;
+
+// Ne fonctionne pas sur tous les navigateurs
+::-webkit-scrollbar {
+  width: 10px;
+  &-track {
+    background: $clair-Blanc;
+  }
+
+  &-thumb {
+    background: $sombre-BleuENI;
+
+    &:hover {
+      background: $clair-Bleu;
+    }
+  }
+}
+
+[page="infos"] {
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+
+    &:first-of-type {
+      margin-top: 2.5rem;
+    }
+  }
+
+  .items-container {
+    height: 100%;
+    max-height: 350px;
+    display: grid;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e e";
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(3rem, auto);
+    gap: 1rem;
+
+    h3 {
+      font-family: $font-2;
+      font-size: 2rem;
+    }
+
+    #title1 {
+      place-self: center;
+      grid-area: a;
+    }
+    #title2 {
+      place-self: center;
+      grid-area: b;
+    }
+    .items1 {
+      place-self: center;
+      grid-area: c;
+      overflow-y: auto;
+      background-color: $clair-Blanc;
+      border-radius: 20px 0 0 20px;
+      p {
+        word-wrap: break-word;
+        color: $sombre-Noir;
+      }
+    }
+    .items2 {
+      place-self: center;
+      grid-area: d;
+      background-color: $clair-Blanc;
+      border-radius: 0 20px 20px 0;
+      a {
+        color: $sombre-Noir;
+        &:hover {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    span {
+      margin-top: 2rem;
+      place-self: center;
+      grid-area: e;
+    }
+
+    .items {
+      height: 100%;
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid $sombre-BleuENI;
+      box-shadow: 8px 8px 25px 8px rgba($sombre-BleuENI, 0.85);
+    }
+  }
+}

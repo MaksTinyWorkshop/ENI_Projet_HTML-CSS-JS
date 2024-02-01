@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promo D2WM 2K24 - Informations</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/logo.png" />
+    <link rel="stylesheet" href="../Style/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-box">
+        <img src="/assets/logo.png" alt="Logo de l'école ENI" />
+      </div>
+      <div class="promo-box">
+        <p id="promo"></p>
+      </div>
+      <nav class="nav-box">
+        <div id="side-bar">
+          <div class="toggle-btn" id="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <ul>
+            <li>
+              <a href="../index.html">Accueil</a>
+            </li>
+            <li>
+              <a href="/Pages/prefs.html">Préférences</a>
+            </li>
+            <li>
+              <a href="/Pages/map.html">Carte</a>
+            </li>
+            <li>
+              <a href="#">Informations</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="/Pages/prefs.html">Préférences</a>
+          </li>
+          <li>
+            <a href="/Pages/map.html">Carte</a>
+          </li>
+          <li>
+            <a href="#">Informations</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="landing" page="infos">
+      <div class="title-box">
+        <h1>* INFORMATIONS GENERALES *</h1>
+        <h2 id="infoDates"></h2>
+        <h2 id="nbStudents"></h2>
+      </div>
+      <section class="items-container">
+        <h3 id="title1">Description</h3>
+        <div class="items1 items">
+          <p id="description">
+            <!--Ici paragraphe injecté dynamiquement-->
+          </p>
+        </div>
+
+        <h3 id="title2">Liens utiles</h3>
+        <div class="items2 items">
+          <ul id="linksList">
+            <!--Ici liens injectés dynamiquement-->
+          </ul>
+        </div>
+
+        <span>
+          <a href="/index.html" class="button">Retour à la page d'Accueil</a>
+        </span>
+      </section>
+    </main>
+    <!--Template de lien-->
+    <template id="templateLink">
+      <li>
+        <a href="" target="_blank" rel="noopener noreferer"></a>
+      </li>
+    </template>
+
+    <script src="../Scripts/infos.js"></script>
+    <script src="../Scripts/theming.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "font-1": "'Montserrat', sans-serif",
+  "font-2": "'Caveat', serif",
+  "sombre-BleuENI": "#134A7F",
+  "clair": {
+    "Blanc": "#FEFEE2",
+    "Bleu": "#8BADDD",
+    "Sable": "#E2C687",
+    "Vert": "#ACEE77",
+    "Lilas": "#C5A5D4"
+  },
+  "sombre": {
+    "Noir": "#2c2928",
+    "Bleu": "#090F18",
+    "Rose": "#090305",
+    "Vert": "#061A16",
+    "Violet": "#1C0A16"
+  },
+  "breakpoints": {
+    "mobile": "480px",
+    "tablet": "768px",
+    "laptop": "1024px"
+  }
+}

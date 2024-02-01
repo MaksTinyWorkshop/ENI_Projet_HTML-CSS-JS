@@ -1,0 +1,23 @@
+[page="map"] {
+  text-align: center;
+
+  #map {
+    margin: 1rem auto 3rem;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 430px;
+    border-radius: 50px;
+
+    .leaflet-left {
+      left: 1rem;
+    }
+    .leaflet-top {
+      top: 1rem;
+    }
+
+    .leaflet-control-attribution {
+      right: 2rem;
+    }
+  }
+}

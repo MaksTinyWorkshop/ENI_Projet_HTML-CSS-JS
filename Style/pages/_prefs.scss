@@ -1,0 +1,58 @@
+@use "../utils/variables" as *;
+
+[page="prefs"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1000px;
+  form {
+    margin: 0 auto;
+    max-width: 830px;
+    height: 100%;
+    padding: 2rem 1rem;
+    border: 2px solid $sombre-BleuENI;
+    border-radius: 25px;
+
+    .switch-theme,
+    .color-theme,
+    .display-checkbox,
+    .colorPreview {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem;
+      font-size: calc(0.6rem + 0.5vw);
+
+      select {
+        font-size: calc(0.6rem + 0.5vw);
+        font-family: $font-1;
+        text-align: right;
+      }
+      #colorPreview {
+        border: 1px solid $sombre-BleuENI;
+        border-radius: 5px;
+      }
+    }
+
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      .radio-list,
+      .radio-card {
+        margin: 0.5rem 0;
+      }
+    }
+
+    .buttons-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+}

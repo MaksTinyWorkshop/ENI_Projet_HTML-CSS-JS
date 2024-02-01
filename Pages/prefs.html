@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promo D2WM 2K24 - Préférences</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/logo.png" />
+    <link rel="stylesheet" href="../Style/style.css" />
+  </head>
+  <header>
+    <div class="logo-box">
+      <img src="/assets/logo.png" alt="Logo de l'école ENI" />
+    </div>
+    <div class="promo-box">
+      <p id="promo"></p>
+    </div>
+    <nav class="nav-box">
+      <div id="side-bar">
+        <div class="toggle-btn" id="btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul>
+          <li>
+            <a href="../index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="#">Préférences</a>
+          </li>
+          <li>
+            <a href="/Pages/map.html">Carte</a>
+          </li>
+          <li>
+            <a href="/Pages/infos.html">Informations</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="/index.html">Accueil</a>
+        </li>
+        <li>
+          <a href="#">Préférences</a>
+        </li>
+        <li>
+          <a href="/Pages/map.html">Carte</a>
+        </li>
+        <li>
+          <a href="/Pages/infos.html">Informations</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="landing" page="prefs">
+    <div class="title-box">
+      <h1>Préférences du site</h1>
+    </div>
+    <section>
+      <form action="" method="POST">
+        <div class="switch-theme">
+          <label for="theme">Thème du site</label>
+          <select name="theme" id="theme">
+            <option value="clair" selected>Clair</option>
+            <option value="sombre">Sombre</option>
+          </select>
+        </div>
+        <div class="color-theme">
+          <label for="themeColors">Couleur du Fond</label>
+          <select name="themeColors" id="themeColors">
+            <!--Les "option" sont injectés dynamiquement-->
+          </select>
+        </div>
+        <div class="colorPreview">
+          <p>Aperçu de la couleur</p>
+          <div id="colorPreview" style="width: 50px; height: 50px"></div>
+        </div>
+
+        <div class="display-checkbox">
+          <p>Format d'affichage de la liste des apprenants</p>
+          <div class="input-box">
+            <div class="radio-list">
+              <input
+                type="radio"
+                name="checkbox"
+                id="liste"
+                value="liste"
+                checked
+              />
+              <label for="liste">Liste</label>
+            </div>
+            <div class="radio-card">
+              <input type="radio" name="checkbox" id="cartes" value="cartes" />
+              <label for="cartes">Cartes</label>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-box">
+          <a href="/index.html" class="button">Retour à la page d'Accueil</a>
+          <button type="submit" id="saveSettings">Enregistrer</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="../Scripts/prefs.js"></script>
+  <script src="../Scripts/theming.js"></script>
+</html>

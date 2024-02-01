@@ -1,0 +1,71 @@
+@use "../utils/variables" as *;
+
+.content {
+  color: $sombre-BleuENI;
+  transition: 1s;
+}
+
+#side-bar {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: $sombre-BleuENI;
+  top: 0;
+  right: -230px;
+  transition: 0.5s ease-out;
+  z-index: 1000;
+  opacity: 0.9;
+
+  &.opened {
+    right: 0;
+  }
+
+  li {
+    margin-top: 2rem;
+    text-align: center;
+    &:hover {
+      scale: 2;
+    }
+
+    a {
+      color: $clair-Blanc;
+    }
+  }
+}
+
+.toggle-btn {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: -6rem;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+
+  span {
+    width: 4rem;
+    height: 0.75rem;
+    border-radius: 5px;
+    background: $sombre-BleuENI;
+    display: block;
+    margin-top: 4px;
+    transition: 0.3s ease;
+    &.opened {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(15px, 6px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(16px, -9px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoints-tablet) {
+  .toggle-btn {
+    display: block;
+  }
+}

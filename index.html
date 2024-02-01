@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promo D2WM 2K24</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/logo.png" />
+    <link rel="stylesheet" href="./Style/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-box">
+        <img src="/assets/logo.png" alt="Logo de l'école ENI" />
+      </div>
+      <div class="promo-box">
+        <p id="promo"></p>
+      </div>
+      <nav class="nav-box">
+        <div id="side-bar">
+          <div class="toggle-btn" id="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <ul>
+            <li>
+              <a href="#">Accueil</a>
+            </li>
+            <li>
+              <a href="/Pages/prefs.html">Préférences</a>
+            </li>
+            <li>
+              <a href="/Pages/map.html">Carte</a>
+            </li>
+            <li>
+              <a href="/Pages/infos.html">Informations</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="#">Accueil</a>
+          </li>
+          <li>
+            <a href="/Pages/prefs.html">Préférences</a>
+          </li>
+          <li>
+            <a href="/Pages/map.html">Carte</a>
+          </li>
+          <li>
+            <a href="/Pages/infos.html">Informations</a>
+          </li>
+        </ul>
+        <div class="display-checkbox">
+          <p>Type d'affichage</p>
+          <div>
+            <input
+              type="radio"
+              name="checkbox"
+              id="liste"
+              value="liste"
+              checked
+            />
+            <label for="liste">&nbsp;Liste</label>
+          </div>
+          <div>
+            <input type="radio" name="checkbox" id="cartes" value="cartes" />
+            <label for="cartes">&nbsp;Cartes</label>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="landing" page="accueil">
+      <h1>Liste des apprenants</h1>
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Ville</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Le tableau est rempli dynamiquement en fonction du template-->
+        </tbody>
+      </table>
+
+      <div id="studentCards">
+        <!--Ici les cards sont insérées dynamiquement-->
+      </div>
+      <div id="studentModals">
+        <!--Ici les modals sont insérées dynamiquement-->
+      </div>
+      <!--Templates-->
+      <!--Template Carte-->
+      <template id="templateStudentCard">
+        <div class="card">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p class="details">Détails</p>
+        </div>
+      </template>
+      <!--Template Ligne de Tableau-->
+      <template id="templateStudentArray">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="details">Détails</td>
+        </tr>
+      </template>
+      <!--Template Modale-->
+      <template id="templateStudentModal">
+        <div class="modal">
+          <div class="top-modal">
+            <span type="close">X</span>
+            <div class="img-box">
+              <img type="avatar" src="" alt="" />
+            </div>
+            <div class="text-box">
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+          <div class="bottom-modal">
+            <fieldset>
+              <legend>Anecdotes</legend>
+              <p></p>
+            </fieldset>
+          </div>
+        </div>
+      </template>
+    </main>
+    <script src="./Scripts/index.js"></script>
+    <script src="./Scripts/theming.js"></script>
+  </body>
+</html>
