@@ -94,6 +94,9 @@ header .nav-box .display-checkbox {
   border-radius: 25px;
   color: #FEFEE2;
 }
+.modal.opened {
+  display: block;
+}
 .modal .top-modal {
   position: relative;
   margin: 1rem;

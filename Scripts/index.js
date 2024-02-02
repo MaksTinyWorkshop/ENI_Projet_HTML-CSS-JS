@@ -158,8 +158,8 @@ function displayModal(e) {
   const modalToDisplay = document.querySelector(
     ".modal[data-number='" + dataNumber + "']"
   );
-  modalToDisplay.style.display = "block";
-
+  modalToDisplay.classList.add("opened");
+  e.stopPropagation();
   // Fonction Fun qui position la modale aléatoirement
   const maxWidth = window.innerWidth - modalToDisplay.offsetWidth;
   const maxHeight = window.innerHeight - modalToDisplay.offsetHeight;
@@ -180,23 +180,14 @@ function displayModal(e) {
   // EventListener pour fermer la modale au clic sur X
   const close = modalToDisplay.querySelector("span[type='close']");
   close.addEventListener("click", () => {
-    modalToDisplay.style.display = "none";
-  });
-
-  // StopPropagation  pour éviter de déclencher l'écouteur de clic du document
-  modalToDisplay.addEventListener("click", (e) => {
-    e.stopPropagation();
+    modalToDisplay.classList.remove("opened");
   });
 }
 
-// Fonction qui permet de fermer une modale au clic en dehors de celle-ci
-document.addEventListener("click", function (e) {
-  const openedModal = document.querySelector(".modal[style='display: block;']");
-  if (
-    openedModal &&
-    !openedModal.contains(e.target) &&
-    !e.target.matches("[data-number]")
-  ) {
-    openedModal.style.display = "none";
+//Fonction qui permet de fermer une modale au clic en dehors de celle-ci
+document.addEventListener("click", function () {
+  const openedModal = document.querySelector(".opened");
+  if (openedModal) {
+    openedModal.classList.remove("opened");
   }
 });
