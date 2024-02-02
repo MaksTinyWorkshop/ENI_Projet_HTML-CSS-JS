@@ -186,6 +186,8 @@ button:hover a {
 }
 .landing h2 {
   font-size: calc(0.4rem + 2vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 .details {
