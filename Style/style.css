@@ -102,6 +102,7 @@ header .nav-box .display-checkbox {
   height: calc(50% - 1rem);
 }
 .modal .top-modal .img-box img {
+  border-radius: 75px;
   max-width: 130px;
   max-height: 130px;
 }
