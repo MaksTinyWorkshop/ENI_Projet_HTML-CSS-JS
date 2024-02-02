@@ -160,6 +160,23 @@ function displayModal(e) {
   );
   modalToDisplay.style.display = "block";
 
+  // Fonction Fun qui position la modale aléatoirement
+  const maxWidth = window.innerWidth - modalToDisplay.offsetWidth;
+  const maxHeight = window.innerHeight - modalToDisplay.offsetHeight;
+
+  // Calculer une position aléatoire sans dépasser les limites de l'écran
+  const randomLeft = Math.floor(Math.random() * maxWidth);
+  const randomTop = Math.floor(Math.random() * maxHeight);
+
+  // Seulement sur écran > tablette
+  if (window.innerWidth >= 768) {
+    modalToDisplay.style.left = `${randomLeft}px`;
+    modalToDisplay.style.top = `${randomTop}px`;
+  } else {
+    modalToDisplay.style.right = `calc(50% + 1rem)`;
+    modalToDisplay.style.bottom = `40%`;
+  }
+
   // EventListener pour fermer la modale au clic sur X
   const close = modalToDisplay.querySelector("span[type='close']");
   close.addEventListener("click", () => {

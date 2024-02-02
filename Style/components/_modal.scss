@@ -2,10 +2,8 @@
 
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  right: 8rem;
-  bottom: 7rem;
   width: 28rem;
   max-width: 460px;
   height: 20rem;

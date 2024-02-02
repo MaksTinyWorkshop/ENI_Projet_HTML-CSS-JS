@@ -1,10 +1,16 @@
+# sass
 .sass-cache/
 *.css.map
 *.sass.map
 *.scss.map
 
+# dependencies
 node_modules
+
 
 package-lock.json
 
 .gitignore
+
+# misc
+.DS_Store
