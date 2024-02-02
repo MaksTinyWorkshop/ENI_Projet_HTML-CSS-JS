@@ -5,6 +5,7 @@
 }
 
 #studentTable {
+  margin: 0 auto;
   border: 2px solid $sombre-BleuENI;
   border-radius: 4px;
   text-align: left;
@@ -72,6 +73,11 @@
     #studentTable {
       width: 98vw;
       font-size: 0.8rem;
+    }
+
+    #studentCards {
+      width: 90vw;
+      margin: 0 5vw;
     }
   }
 }

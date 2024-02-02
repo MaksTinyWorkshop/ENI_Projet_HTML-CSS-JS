@@ -42,7 +42,7 @@
 
     h3 {
       font-family: $font-2;
-      font-size: 2rem;
+      font-size: calc(1.3rem + 1vw);
     }
 
     #title1 {
@@ -67,6 +67,7 @@
     .items2 {
       place-self: center;
       grid-area: d;
+      overflow-y: auto;
       background-color: $clair-Blanc;
       border-radius: 0 20px 20px 0;
       a {
@@ -88,6 +89,25 @@
       padding: 1rem;
       border: 2px solid $sombre-BleuENI;
       box-shadow: 8px 8px 25px 8px rgba($sombre-BleuENI, 0.85);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoints-tablet) {
+  [page="infos"] {
+    .items-container {
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+      max-height: none;
+
+      .items2 {
+        border-radius: 20px 0 0 20px;
+      }
+
+      span {
+        margin: 2rem 0 3rem;
+      }
     }
   }
 }

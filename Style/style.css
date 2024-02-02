@@ -183,9 +183,10 @@ button:hover a {
   font-family: "Caveat", serif;
   font-size: calc(1rem + 2vw);
   margin-bottom: 2rem;
+  text-align: center;
 }
 .landing h2 {
-  font-size: calc(0.3rem + 2vw);
+  font-size: calc(0.4rem + 2vw);
 }
 
 .details {
@@ -272,6 +273,7 @@ button:hover a {
 }
 
 #studentTable {
+  margin: 0 auto;
   border: 2px solid #134A7F;
   border-radius: 4px;
   text-align: left;
@@ -332,6 +334,10 @@ button:hover a {
   .landing[page=accueil] #studentTable {
     width: 98vw;
     font-size: 0.8rem;
+  }
+  .landing[page=accueil] #studentCards {
+    width: 90vw;
+    margin: 0 5vw;
   }
 }
 [page=prefs] {
@@ -448,7 +454,7 @@ section form .buttons-box {
 }
 [page=infos] .items-container h3 {
   font-family: "Caveat", serif;
-  font-size: 2rem;
+  font-size: calc(1.3rem + 1vw);
 }
 [page=infos] .items-container #title1 {
   place-self: center;
@@ -472,6 +478,7 @@ section form .buttons-box {
 [page=infos] .items-container .items2 {
   place-self: center;
   grid-area: d;
+  overflow-y: auto;
   background-color: #FEFEE2;
   border-radius: 0 20px 20px 0;
 }
@@ -494,6 +501,20 @@ section form .buttons-box {
   box-shadow: 8px 8px 25px 8px rgba(19, 74, 127, 0.85);
 }
 
+@media screen and (max-width: 768px) {
+  [page=infos] .items-container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    max-height: none;
+  }
+  [page=infos] .items-container .items2 {
+    border-radius: 20px 0 0 20px;
+  }
+  [page=infos] .items-container span {
+    margin: 2rem 0 3rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
