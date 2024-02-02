@@ -1,3 +1,18 @@
+/*----------------------------
+Récupération des infos du JSON
+----------------------------*/
+function recupDonnees() {
+  fetch("/assets/promo.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      handleDynamicInfos(data);
+      handleLocalStorage();
+    });
+}
+recupDonnees();
+
 /*-------------------------------------------------------
 En fonction du localStorage, gestion couleurs et affichage
 -------------------------------------------------------*/
@@ -16,14 +31,13 @@ function handleLocalStorage() {
     }
   }
 }
-handleLocalStorage();
 
 /*------------------------------------------------------------
 En fonction du localStorage, remplissage dynamique des données
 ------------------------------------------------------------*/
-function handleDynamicInfos() {
-  // Récupération des données localStorage
-  let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+function handleDynamicInfos(data) {
+  // Récupération des données
+  let infos = data.infoPromo;
   let links = infos.liens;
 
   // Pointage des éléments à remplir
@@ -52,5 +66,3 @@ function handleDynamicInfos() {
     linksList.appendChild(clone);
   }
 }
-
-handleDynamicInfos();

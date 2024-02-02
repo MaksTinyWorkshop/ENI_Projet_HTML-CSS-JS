@@ -1,7 +1,22 @@
+/*----------------------------
+Récupération des infos du JSON
+----------------------------*/
+function recupDonnees() {
+  fetch("/assets/promo.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      fillElements(data);
+      handleLocalStorage();
+    })
+    .then(listenModal);
+}
+recupDonnees();
+
 /*----------------------------------------------
 Gestion de l'affichage en fonction du check Radio
 ----------------------------------------------*/
-
 // Les boutons radio
 const displayList = document.getElementById("liste");
 const displayCard = document.getElementById("cartes");
@@ -38,21 +53,6 @@ const templateCard = document.getElementById("templateStudentCard");
 const templateModal = document.getElementById("templateStudentModal");
 
 const studentArray = document.querySelector("tbody");
-
-function recupDonnees() {
-  fetch("/assets/promo.json")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      fillElements(data);
-      toLocaleStorage(data);
-      toLocaleStorageInfoPromo(data);
-      handleLocalStorage();
-    })
-    .then(listenModal);
-}
-recupDonnees();
 
 // Fonction de remplissage dynamique des cards et lignes de tableau en fonction du fichier promo.json
 function fillElements(data) {
@@ -96,16 +96,6 @@ function fillElements(data) {
     studentCards.appendChild(clone2);
     studentModals.appendChild(clone3);
   }
-}
-
-// Stockage du tableau des apprenants dans le localStorage (optionnel mais utile)
-function toLocaleStorage(data) {
-  localStorage.setItem("Apprenants", JSON.stringify(data.apprenants));
-}
-
-// Stockage des infos de la promo
-function toLocaleStorageInfoPromo(data) {
-  localStorage.setItem("Infos Promo", JSON.stringify(data.infoPromo));
 }
 
 /*--------------------------------------------------------------------------------

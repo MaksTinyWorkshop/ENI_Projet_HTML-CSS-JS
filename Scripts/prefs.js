@@ -9,7 +9,7 @@ function recupCouleurs() {
     })
     .then((data) => {
       fillcolorTab(data);
-      handleLocalStorage();
+      handleLocalStorage(data);
     });
 }
 recupCouleurs();
@@ -121,10 +121,12 @@ function savePrefs(e) {
 Gestion des prefs en fonction du local Storage et remplissage dynamique
 ---------------------------------------------------------------------*/
 // Englobage dans une fonction
-function handleLocalStorage() {
-  // Récupération des données localStorage
+function handleLocalStorage(data) {
+  // Récupération des données localStorage...
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
   let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+  // ... & Variable de couleur
+  let couleurFont = data.sombre.Noir;
 
   // Remplissage du Titre
   const promo = document.getElementById("promo");
@@ -140,7 +142,7 @@ function handleLocalStorage() {
     } else {
       fillTheme(colorTab.sombre, prefs.backgroundColor);
       document.body.style.backgroundColor = prefs.backgroundColor;
-      document.body.style.color = "#fff";
+      document.body.style.color = couleurFont;
     }
     // Gestion du bouton radio
     if (prefs.display == "liste") {

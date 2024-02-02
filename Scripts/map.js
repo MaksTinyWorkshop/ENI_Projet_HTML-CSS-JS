@@ -1,10 +1,30 @@
+/*----------------------------
+Récupération des infos du JSON
+----------------------------*/
+function recupDonnees() {
+  Promise.all([
+    fetch("/assets/promo.json").then((response) => {
+      return response.json();
+    }),
+    fetch("/assets/variables.json").then((response) => {
+      return response.json();
+    }),
+  ]).then((data) => {
+    fillCoordonnees(data[0]);
+    handleLocalStorage(data[1]);
+  });
+}
+recupDonnees();
+
 /*------------------------------------------------------------------------------
 En fonction du localStorage, gestion couleurs, affichage et remplissage dynamique
 ------------------------------------------------------------------------------*/
-function handleLocalStorage() {
-  // Récupération des données localStorage
+function handleLocalStorage(data) {
+  // Récupération des données localStorage...
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
   let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+  // ... & Variable de couleur
+  let couleurFont = data.sombre.Noir;
 
   // Remplissage du Titre
   const promo = document.getElementById("promo");
@@ -17,11 +37,10 @@ function handleLocalStorage() {
       document.body.style.backgroundColor = prefs.backgroundColor;
     } else {
       document.body.style.backgroundColor = prefs.backgroundColor;
-      document.body.style.color = "#fff";
+      document.body.style.color = couleurFont;
     }
   }
 }
-handleLocalStorage();
 
 /*----------------------
 Implémentation de la map 
@@ -41,11 +60,14 @@ L.tileLayer(
 Marqueurs et coordonnées 
 ----------------------*/
 
-let students = JSON.parse(localStorage.getItem("Apprenants"));
-for (let i = 0; i < students.length; i++) {
-  let marker = L.marker([
-    students[i].coordonnees.latitude,
-    students[i].coordonnees.longitude,
-  ]).addTo(map);
-  marker.bindPopup(`${students[i].prenom} ${students[i].nom}`).openPopup();
+function fillCoordonnees(data) {
+  data = data.apprenants;
+
+  for (let i = 0; i < data.length; i++) {
+    let marker = L.marker([
+      data[i].coordonnees.latitude,
+      data[i].coordonnees.longitude,
+    ]).addTo(map);
+    marker.bindPopup(`${data[i].prenom} ${data[i].nom}`).openPopup();
+  }
 }
