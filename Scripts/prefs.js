@@ -1,19 +1,25 @@
+/*----------------------------
+Récupération des infos du JSON
+----------------------------*/
+// Récupération des variables définies dans un JSON, et des infos Promo
+function recupDonnees() {
+  Promise.all([
+    fetch("/assets/promo.json").then((response) => {
+      return response.json();
+    }),
+    fetch("/assets/variables.json").then((response) => {
+      return response.json();
+    }),
+  ]).then((data) => {
+    fillcolorTab(data[1]);
+    handleLocalStorage(data);
+  });
+}
+recupDonnees();
+
 /*---------------------------------------------------------
 Initialisation d'un tableau de couleurs possibles par thème
 ---------------------------------------------------------*/
-// Récupération des variables définies dans un JSON.
-function recupCouleurs() {
-  fetch("/assets/variables.json")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      fillcolorTab(data);
-      handleLocalStorage(data);
-    });
-}
-recupCouleurs();
-
 // Tableau de data rempli avec la fonction
 let colorTab = [];
 
@@ -32,7 +38,6 @@ Ciblage du menu déroulant de thème et gestion des options par défaut
 const theme = document.getElementById("theme");
 const themeColors = document.getElementById("themeColors");
 const colorPreview = document.getElementById("colorPreview");
-const valid = document.getElementById("validPreview");
 
 // Fonction de remplissage des options en fonction du thème
 function fillTheme(chosenTheme, storedColor = null) {
@@ -51,6 +56,7 @@ function fillTheme(chosenTheme, storedColor = null) {
     // Vérifier si cette couleur est celle enregistrée
     if (storedColor && code === storedColor) {
       option.selected = true;
+      console.log(option);
       colorPreview.style.backgroundColor = storedColor;
     }
   }
@@ -120,13 +126,12 @@ function savePrefs(e) {
 /*---------------------------------------------------------------------
 Gestion des prefs en fonction du local Storage et remplissage dynamique
 ---------------------------------------------------------------------*/
-// Englobage dans une fonction
 function handleLocalStorage(data) {
   // Récupération des données localStorage...
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
-  let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+  let infos = data[0].infoPromo;
   // ... & Variable de couleur
-  let couleurFont = data.sombre.Noir;
+  let couleurFont = data[1].clair.Blanc;
 
   // Remplissage du Titre
   const promo = document.getElementById("promo");

@@ -11,7 +11,7 @@ function recupDonnees() {
     }),
   ]).then((data) => {
     fillCoordonnees(data[0]);
-    handleLocalStorage(data[1]);
+    handleLocalStorage(data);
   });
 }
 recupDonnees();
@@ -22,9 +22,9 @@ En fonction du localStorage, gestion couleurs, affichage et remplissage dynamiqu
 function handleLocalStorage(data) {
   // Récupération des données localStorage...
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
-  let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+  let infos = data[0].infoPromo;
   // ... & Variable de couleur
-  let couleurFont = data.sombre.Noir;
+  let couleurFont = data[1].clair.Blanc;
 
   // Remplissage du Titre
   const promo = document.getElementById("promo");

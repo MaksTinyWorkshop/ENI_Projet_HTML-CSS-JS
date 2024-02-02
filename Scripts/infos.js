@@ -2,23 +2,27 @@
 Récupération des infos du JSON
 ----------------------------*/
 function recupDonnees() {
-  fetch("/assets/promo.json")
-    .then((response) => {
+  Promise.all([
+    fetch("/assets/promo.json").then((response) => {
       return response.json();
-    })
-    .then((data) => {
-      handleDynamicInfos(data);
-      handleLocalStorage();
-    });
+    }),
+    fetch("/assets/variables.json").then((response) => {
+      return response.json();
+    }),
+  ]).then((data) => {
+    handleDynamicInfos(data[0]);
+    handleLocalStorage(data);
+  });
 }
 recupDonnees();
 
 /*-------------------------------------------------------
 En fonction du localStorage, gestion couleurs et affichage
 -------------------------------------------------------*/
-function handleLocalStorage() {
+function handleLocalStorage(data) {
   // Récupération des données localStorage
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
+  let couleurFont = data[1].clair.Blanc;
 
   // Si des préférences sont stockées, elles sont appliquées et affichées
   if (prefs) {
@@ -27,7 +31,7 @@ function handleLocalStorage() {
       document.body.style.backgroundColor = prefs.backgroundColor;
     } else {
       document.body.style.backgroundColor = prefs.backgroundColor;
-      document.body.style.color = "#fff";
+      document.body.style.color = couleurFont;
     }
   }
 }

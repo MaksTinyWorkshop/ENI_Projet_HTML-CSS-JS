@@ -8,7 +8,7 @@ function recupDonnees() {
     })
     .then((data) => {
       fillElements(data);
-      handleLocalStorage();
+      handleLocalStorage(data);
     })
     .then(listenModal);
 }
@@ -101,10 +101,10 @@ function fillElements(data) {
 /*--------------------------------------------------------------------------------
 En fonction du localStorage, gestion couleurs et affichage et remplissage dynamique
 --------------------------------------------------------------------------------*/
-function handleLocalStorage() {
+function handleLocalStorage(data) {
   // Récupération des données localStorage
   let prefs = JSON.parse(localStorage.getItem("Préférences"));
-  let infos = JSON.parse(localStorage.getItem("Infos Promo"));
+  let infos = data.infoPromo;
 
   // Remplissage du Titre
   const promo = document.getElementById("promo");
