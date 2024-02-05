@@ -5,6 +5,7 @@
 }
 
 #studentTable {
+  display: none;
   margin: 0 auto;
   border: 2px solid $sombre-BleuENI;
   border-radius: 4px;
@@ -36,8 +37,12 @@
     height: 2rem;
   }
 }
+#studentTable.opened {
+  display: table;
+}
 
 #studentCards {
+  display: none;
   width: 100%;
   height: 100%;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -66,7 +71,9 @@
     }
   }
 }
-
+#studentCards.opened {
+  display: grid;
+}
 @media screen and (max-width: $breakpoints-mobile) {
   .landing[page="accueil"] {
     margin: 0;
